@@ -1,8 +1,18 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown, Form, Button, FormControl } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Form, Button, FormControl, Col } from 'react-bootstrap';
 
 class TopBar extends React.Component {
+  handleSubmit = (event) => {
+    // const form = event.currentTarget;
+    // if (form.checkValidity() === false) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
 
+    // setValidated(true);
+
+    alert("Event created!");
+  };
 
   render() {
     return (
@@ -10,8 +20,8 @@ class TopBar extends React.Component {
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/new-event">New Event</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Form inline>
@@ -19,8 +29,6 @@ class TopBar extends React.Component {
             <Button>Search</Button>
           </Form>
         </Navbar>
-       
-        
       </div>
     );
   }
