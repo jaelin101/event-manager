@@ -1,15 +1,15 @@
 import React from 'react';
 
-class ViewEvent extends React.Component {
+class ViewEvents extends React.Component {
 
 
   render() {
     return (
       <div>
-        <p>View event tab</p>
+        <h1>All Events</h1>
         
       </div>
     );
   }
 }
-export default ViewEvent;
+export default ViewEvents;

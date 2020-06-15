@@ -2,12 +2,27 @@ import React from 'react';
 import { Navbar, Nav, NavDropdown, Form, Button, FormControl, Col } from 'react-bootstrap';
 
 class NewEvent extends React.Component {
+  handleSubmit = (event) => {
+    // const form = event.currentTarget;
+    // if (form.checkValidity() === false) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
 
+    // setValidated(true);
+
+    alert("Event created!");
+  };
 
   render() {
+    let styles = {
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      width: '50%'
+    }
     return (
-      <div>
-        <p>New event tab</p>
+      <div style={styles}>
+        <h1>Create New Event</h1>
         <Form>
           <Form.Group controlId="formEventTitle">
             <Form.Label>Event Title</Form.Label>

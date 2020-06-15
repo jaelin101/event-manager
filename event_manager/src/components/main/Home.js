@@ -6,11 +6,9 @@ const Home = () => {
         <div>
 
             <div>
-                <h1>Welcome to Plenty of Jobs!!</h1>
-                <p> This website is a database that allows job seakers to upload more than just your basic information. But it even allows for you to
-                showcase your own app demos and pitch video!!.
-                            </p>
-
+                <h1>Welcome to the Event Manager!!</h1>
+                <p> This web application allows users to create and view events happening in the Atlanta Black Tech community. </p>
+        
                 <p> Are you the kind of person who needs to tell someone why you should hire them? Then look no further POJ allows for 1 min video
                     uploads allowing you to sell yourself to future employers.
                             </p>

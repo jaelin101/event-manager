@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import TopBar from './components/TopBar';
+import TopBar from './components/shared/TopBar';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import NewEvent from './components/NewEvent';
-import ViewEvent from './components/ViewEvents';
-import Home from './components/Home';
+import NewEvent from './components/main/NewEvent';
+// import ViewEvent from './components/ViewEvents';
+import Home from './components/main/Home';
+import ViewEvents from './components/main/ViewEvents';
+import Admin from './components/admin/Admin';
+import ClientEvents from './components/main/ClientEvents';
 
 
 class App extends React.Component {
@@ -19,14 +22,27 @@ class App extends React.Component {
           <div className="overlay"></div>
           <TopBar />
           <Switch>
-          <Route path="/new-event">
-            <NewEvent />
-          </Route>
-        
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+
+              <Route path="/new-event">
+                <NewEvent />
+              </Route>
+
+              <Route path="/all-events">
+                <ViewEvents />
+              </Route>
+
+              <Route path="/my-events">
+                <ClientEvents />
+              </Route>
+
+              <Route path="/admin">
+                <Admin />
+              </Route>
+
+              <Route path="/">
+                <Home />
+              </Route>
+          </Switch>
         </div>
        
 
