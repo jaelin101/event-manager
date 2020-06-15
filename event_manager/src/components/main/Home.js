@@ -6,7 +6,7 @@ const Home = () => {
         <div>
 
             <div>
-                <h1>Welcome to the Event Manager!!</h1>
+                <h1>Welcome to the brand new Event Manager!!</h1>
                 <p> This web application allows users to create and view events happening in the Atlanta Black Tech community. </p>
         
                 <p> Are you the kind of person who needs to tell someone why you should hire them? Then look no further POJ allows for 1 min video
