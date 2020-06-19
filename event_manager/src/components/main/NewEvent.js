@@ -26,7 +26,7 @@ class NewEvent extends React.Component {
         <Form>
           <Form.Group controlId="formEventTitle">
             <Form.Label>Event Title</Form.Label>
-            <Form.Control placeholder="What is your event called?" />
+            <Form.Control placeholder="What is the event called?" />
           </Form.Group>
 
           <Form.Group controlId="formHostName">
@@ -46,10 +46,10 @@ class NewEvent extends React.Component {
 
           <Form.Group controlId="formEventDescription">
             <Form.Label>Event Description</Form.Label>
-            <Form.Control as="textarea" rows="3" placeholder="Describe your event" />
+            <Form.Control as="textarea" rows="3" placeholder="Describe the event" />
           </Form.Group>
 
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+          <Button variant="outline-info" type="submit" onClick={this.handleSubmit}>
             Submit
           </Button>
         </Form>
