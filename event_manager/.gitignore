@@ -25,6 +25,9 @@ yarn-error.log*
 package-lock.json
 /package-lock.json
 
+/.firebase/.cache
+*.cache
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
