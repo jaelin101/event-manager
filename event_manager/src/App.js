@@ -9,6 +9,8 @@ import Home from './components/main/Home';
 import ViewEvents from './components/main/ViewEvents';
 import Admin from './components/admin/Admin';
 import ClientEvents from './components/main/ClientEvents';
+import Header from './components/shared/Header';
+import Footer from './components/shared/Footer';
 
 
 class App extends React.Component {
@@ -17,11 +19,13 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-      <div class="bg">
-        <div id="wrapper" className="toggled">
-          <div className="overlay"></div>
-          <TopBar />
-          <Switch>
+        <Header />
+        <div className="bg">
+          <div id="wrapper" className="toggled">
+            <div className="overlay"></div>
+
+            <TopBar />
+            <Switch>
 
               <Route path="/new-event">
                 <NewEvent />
@@ -42,12 +46,10 @@ class App extends React.Component {
               <Route path="/">
                 <Home />
               </Route>
-          </Switch>
+            </Switch>
+          </div>
         </div>
-       
-
-      </div>
-
+        <Footer />
       </Router>
     );
   }
