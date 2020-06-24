@@ -14,8 +14,13 @@ class NewEvent extends React.Component {
       title: '',
       hostName: '',
       date: '',
+      time: '',
+      duration: '',
+      isVirtual: false,
+      address: '',
       link: '',
-      description: ''
+      description: '',
+      cost:''
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -54,7 +59,8 @@ class NewEvent extends React.Component {
 
   handleInputChange = (event) => {
     const { target } = event;
-    const { name, value } = target;
+    const { name } = target;
+    const value = target.name === 'isVirtual' ? target.checked : target.value;
 
     this.setState({
       [name]: value
@@ -65,7 +71,8 @@ class NewEvent extends React.Component {
     let styles = {
       marginLeft: 'auto',
       marginRight: 'auto',
-      width: '50%'
+      width: '50%',
+      paddingBottom: '20px'
     }
     return (
       <div style={styles}>
@@ -102,10 +109,52 @@ class NewEvent extends React.Component {
             />
           </Form.Group>
 
+          <Form.Group controlId="formEventTime">
+            <Form.Label>Time</Form.Label>
+            <Form.Control 
+              name="time"
+              type="time"
+              placeholder="What time is the event?" 
+              value={this.state.time}
+              onChange={this.handleInputChange}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formEventDuration">
+            <Form.Label>Event Duration</Form.Label>
+            <Form.Control 
+              name="duration"
+              placeholder="How long will the event last?" 
+              value={this.state.duration}
+              onChange={this.handleInputChange}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formIsVirtual">
+            <Form.Check 
+              name="isVirtual"
+              type="checkbox"
+              label="Virtual Event"
+              value={this.state.virtual}
+              onChange={this.handleInputChange}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formEventAddress">
+            <Form.Label>Address</Form.Label>
+            <Form.Control 
+              name="address"
+              placeholder="Where will the event be held?" 
+              value={this.state.address}
+              onChange={this.handleInputChange}
+            />
+          </Form.Group>
+
           <Form.Group controlId="formRegistrationLink">
             <Form.Label>Registration Link</Form.Label>
             <Form.Control 
               name="link"
+              type="url"
               placeholder="Where can attendees register?" 
               value={this.state.link}
               onChange={this.handleInputChange}
@@ -120,6 +169,15 @@ class NewEvent extends React.Component {
               rows="3" 
               placeholder="Describe the event" 
               value={this.state.description}
+              onChange={this.handleInputChange}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formEventCost">
+            <Form.Label>Cost Per Person</Form.Label>
+            <Form.Control 
+              name="cost"
+              value={this.state.cost}
               onChange={this.handleInputChange}
             />
           </Form.Group>
