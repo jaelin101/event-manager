@@ -28,8 +28,8 @@ const uiConfig = {
 class Login extends React.Component {
   render() {
     return (
-      <div>
-        <p>Please sign-in:</p>
+      <div className="container">
+        <div style={{width: '100%', textAlign: 'center', marginTop: '10%' }}>Please sign-in:</div>
         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
       </div>
     );

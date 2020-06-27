@@ -4,8 +4,8 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <div>
-            <footer>
+            <>
+            {/* <footer>
         	<div className="container">
             	<div className="row">
                 	
@@ -50,26 +50,17 @@ class Footer extends React.Component {
                     </div>
                 </div>
             </div>
-        </footer>
-        
-       
+        </footer> */}
         <div className="subfooter">
         	<div className="container">
             	<div className="row">
                 	<div className="col-lg-12">
-                    	<p className="pull-left">2015 &copy; Technologists of Color</p>
-                        
-                        <ul className="list-unstyled list-inline pull-right">
-                        	<li><a href="#about">About</a></li>
-                            <li><a href="#program">Programs</a></li>
-                            <li><a href="#stories">Events</a></li>
-                            <li><a href="http://www.meetup.com/Technologists" target="_blank">Meetup</a></li>
-                        </ul>
+                    	<p className="pull-left">2020 &copy; Technologists of Color</p>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+        </>
         );
     }
 }

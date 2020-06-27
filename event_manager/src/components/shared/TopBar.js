@@ -10,9 +10,9 @@ class TopBar extends React.Component {
     const { loggedIn } = this.props;
 
     return (
-      <div>
+      <div className="container">
         <Navbar className="navbar" bg="white" variant="light">
-          <Navbar.Brand href="/" style={{ color: "#bf4d24", fontSize: "25px" }}>Event Manager</Navbar.Brand>
+          <Navbar.Brand href="/home" style={{ color: "#bf4d24", fontSize: "25px" }}>Event Manager</Navbar.Brand>
           { loggedIn && (
             <Nav className="navlinks">
               <Nav.Link href="/home" style={{ color: "#bf4d24" }}>Home</Nav.Link>
@@ -20,6 +20,7 @@ class TopBar extends React.Component {
               <Nav.Link href="/all-events" style={{ color: "#bf4d24" }}>All Events</Nav.Link>
               <Nav.Link href="/my-events" style={{ color: "#bf4d24" }}>My Events</Nav.Link>
               <Nav.Link href="/admin" style={{ color: "#bf4d24" }}>Admin</Nav.Link>
+              <Nav.Link href="https://techsofcolor.org" style={{ color: "#bf4d24" }}>ToC Home</Nav.Link>
             </Nav>
           )}
         </Navbar>

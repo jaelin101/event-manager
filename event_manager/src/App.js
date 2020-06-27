@@ -17,10 +17,11 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Header />
         <div className="bg">
           <div id="wrapper" className="toggled">
             <div className="overlay"></div>
+            <Header />
+
             <Switch>
               <Route path="/new-event">
                 <TopBar loggedIn />
@@ -48,13 +49,14 @@ class App extends React.Component {
               </Route>
 
               <Route path="/">
+                <TopBar />
                 <Login/>
               </Route>
 
             </Switch>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     );
   }

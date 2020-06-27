@@ -68,14 +68,8 @@ class NewEvent extends React.Component {
   };
 
   render() {
-    let styles = {
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      width: '50%',
-      paddingBottom: '20px'
-    }
     return (
-      <div style={styles}>
+      <div className="container">
         <h1>Create New Event</h1>
         <Form>
           <Form.Group controlId="formEventTitle">
