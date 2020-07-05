@@ -1,8 +1,8 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown, Form, Button, FormControl, Col } from 'react-bootstrap';
+import { Form, Button} from 'react-bootstrap';
 
 
-// // Required for side-effects
+// Required for side-effects
 require("firebase/firestore");
 
 // import firebase from 'firebase/firestore';
@@ -71,7 +71,7 @@ class NewEvent extends React.Component {
     return (
       <div className="container">
         <h1>Create New Event</h1>
-        <Form>
+        <Form style={{"width": "70%", "marginBottom": "30px"}}>
           <Form.Group controlId="formEventTitle">
             <Form.Label>Event Title</Form.Label>
             <Form.Control 
