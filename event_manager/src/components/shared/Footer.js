@@ -8,7 +8,6 @@ class Footer extends React.Component {
             <footer>
         	<div className="container">
             	<div className="row">
-                	
                 	<div className="col-md-3 col-lg-3">
                         <h3 className="uppercase">Social Media</h3>
                         <p>Connect and stay connected with the ToC via social media</p>
@@ -39,8 +38,6 @@ class Footer extends React.Component {
                     <div className="col-md-3 col-lg-3">
                     	<h3 className="uppercase">email</h3>
                         
-                    
-
                         <div className="address">
                         	<div className="icon">
                             	<i className="fa fa-lg fa-envelope"></i>
