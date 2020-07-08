@@ -5,7 +5,7 @@ class ViewEvents extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>All Events</h1>
         
       </div>

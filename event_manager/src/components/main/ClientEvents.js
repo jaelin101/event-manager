@@ -5,7 +5,7 @@ class ClientEvents extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>My Events</h1>
         <h1></h1> {/* I forgot how to add empty space under things */}
         <h2> My Created Events</h2>

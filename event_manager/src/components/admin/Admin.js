@@ -5,7 +5,7 @@ class Admin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Admin Page</h1>
         
       </div>
