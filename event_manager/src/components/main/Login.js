@@ -3,6 +3,7 @@ import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
 import logo from '../../images/toc-long-logo.png';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 // Configure Firebase.
 const config = {
@@ -27,6 +28,30 @@ const uiConfig = {
 };
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.login = this.login.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      email: '',
+      password: ''
+    };
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  login(e) {
+    e.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{ 
+      return <Redirect to="/home"/>
+    }).catch((error) => {
+        console.log(error);
+      });
+  }
+
+
   render() {
     return (
       
@@ -41,16 +66,30 @@ class Login extends React.Component {
                 <div className="input-group-prepend">
                   <span className="input-group-text"> <i className="fa fa-envelope"></i> </span>
                 </div>
-                <input name="email" className="form-control" placeholder="Email address" type="email" />
+                <input 
+                  name="email" 
+                  className="form-control" 
+                  placeholder="Email address" 
+                  type="email" 
+                  onChange={this.handleChange}
+                  value={this.state.email}
+                  />
               </div>
               <div className="form-group input-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text"> <i className="fa fa-lock"></i> </span>
                 </div>
-                <input name="password" className="form-control" placeholder="Create password" type="password" />
+                <input 
+                  name="password" 
+                  className="form-control" 
+                  placeholder="Password" 
+                  type="password" 
+                  onChange={this.handleChange}
+                  value={this.state.password}
+                  />
               </div>
               <div className="form-group">
-                <button type="submit" className="btn btn-primary btn-block"> Create Account  </button>
+                <button onClick={this.login} className="btn btn-primary btn-block"> Sign In  </button>
               </div>
               <p className="mt-3 text-muted">Don't have an account? <a href="/register">Register</a></p>
             </form>

@@ -10,9 +10,34 @@ import ViewEvents from './components/main/ViewEvents';
 import Admin from './components/admin/Admin';
 import ClientEvents from './components/main/ClientEvents';
 import Header from './components/shared/Header';
+import firebase from 'firebase';
 
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = ({
+      user: null,
+    });
+    this.authListener = this.authListener.bind(this);
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({ user });
+        localStorage.setItem('user', user.uid);
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem('user');
+      }
+    });
+  }
 
   render() {
     return (
