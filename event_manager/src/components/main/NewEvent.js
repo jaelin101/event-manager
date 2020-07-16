@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form, Button} from 'react-bootstrap';
+import Header from '../shared/Header';
+import TopBar from '../shared/TopBar';
 
 
 // Required for side-effects
@@ -69,6 +71,10 @@ class NewEvent extends React.Component {
 
   render() {
     return (
+      <>
+      <Header />
+      <TopBar loggedIn />
+      
       <div className="container">
         <h1>Create New Event</h1>
         <Form style={{"width": "70%", "marginBottom": "30px"}}>
@@ -181,6 +187,7 @@ class NewEvent extends React.Component {
           </Button>
         </Form>
       </div>
+      </>
     );
   }
 }

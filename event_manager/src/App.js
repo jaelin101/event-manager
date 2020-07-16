@@ -46,43 +46,20 @@ class App extends React.Component {
           <div id="wrapper" className="toggled">
             <div className="overlay"></div>
             <Switch>
-              <Route path="/new-event">
-                <Header />
-                <TopBar loggedIn />
-                <NewEvent />
-              </Route>
+              <Route path="/new-event" component={NewEvent}/>
 
-              <Route path="/all-events">
-                <Header/>
-                <TopBar loggedIn />
-                <ViewEvents />
-              </Route>
+              <Route path="/all-events" component={ViewEvents}/>
 
-              <Route path="/my-events">
-                <Header />
-                <TopBar loggedIn />
-                <ClientEvents />
-              </Route>
+              <Route path="/my-events" component={ClientEvents}/>
 
-              <Route path="/admin">
-                <Header />  
-                <TopBar loggedIn />
-                <Admin />
-              </Route>
+              <Route path="/admin" component={Admin}/>
 
-              <Route path="/home">
-                <Header />
-                <TopBar loggedIn />
-                <Home />
-              </Route>
+              <Route path="/home" component={Home}/>
 
-              <Route path="/register">
-                <Register />
-              </Route>
+              <Route path="/register" component={Register}/>
 
-              <Route path="/">
-                <Login/>
-              </Route>
+              <Route path="/" component={Login}/>
+
             </Switch>
           </div>
         </div>

@@ -2,7 +2,8 @@
 import React from 'react';
 import logo from '../../images/toc-long-logo.png';
 import firebase from 'firebase';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+
 
 
 class Register extends React.Component {
@@ -22,8 +23,9 @@ class Register extends React.Component {
 
     signup(e){
         e.preventDefault();
-        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-        }).then((u)=>{ return <Redirect to="/home"/>
+        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then(()=>{ 
+            const { history } = this.props;
+            history.push("/home");
           })
         .catch((error) => {
             console.log(error);
@@ -31,6 +33,8 @@ class Register extends React.Component {
       }
 
   render() {
+    const { history } = this.props;
+    
     return (
         <div className="container">
             <div className="card bg-light" style={{marginTop: "3em"}}>

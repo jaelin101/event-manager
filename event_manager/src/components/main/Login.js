@@ -44,8 +44,9 @@ class Login extends React.Component {
 
   login(e) {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{ 
-      return <Redirect to="/home"/>
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(() => console.log("logged in")).then(()=>{ 
+      const { history } = this.props;
+      history.push("/home");
     }).catch((error) => {
         console.log(error);
       });
@@ -53,6 +54,9 @@ class Login extends React.Component {
 
 
   render() {
+
+    const { history } = this.props;
+
     return (
       
       <div className="container">
