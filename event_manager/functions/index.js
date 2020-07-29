@@ -1,34 +1,47 @@
-// require("firebase/firestore");
-// import * as admin from 'firebase-admin';
-
-// The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
 const functions = require('firebase-functions');
-
-// The Firebase Admin SDK to access Cloud Firestore.
 const admin = require('firebase-admin');
-admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-    databaseURL: 'https://event-manager-8e18d.firebaseio.com'
-  });
-const express = require('express');
 
-const api = express();
+admin.initializeApp();
 const db = admin.firestore();
 
+const express = require('express');
+const api = express();
+
+api.get('/:id', (req,res) => {
+
+    const eventRef = db.collection('events').doc(req.params.id);
+
+    const getDoc = eventRef.get()
+    .then(doc => {
+      if (!doc.exists) {
+        console.log('No such document!');
+        return res.send('Not Found')
+      } 
+        console.log(doc.data());
+        return res.send(doc.data());
+    })
+    .catch(err => {
+      console.log('Error getting document', err);
+    });
+
+});
 
 api.get('/', (req, res) => {
 
-    // const eventsRef = db.collection('events');
-    // const events = eventsRef.get();
+    db.collection("events").get()
+        .then(querySnapshot => { 
+            let eventArray = [];
 
-    // const eventDocs = events.docs.map(doc => doc.data());
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                if (data.isPublished) {
+                    eventArray.push(doc.data());
+                }
+            });
 
-    let events = (async function() {
-        const snapshot = await db.collection('events').get();
-        return snapshot.docs.map(doc => doc.data());
-    });
-    
-    res.json(events);
+            return res.json(eventArray);
+        })
+        .catch(err => console.log(err));
 
 });
 
