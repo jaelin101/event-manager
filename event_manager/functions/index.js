@@ -28,6 +28,8 @@ api.get('/:id', (req,res) => {
 
 api.get('/', (req, res) => {
 
+    res.header("Access-Control-Allow-Origin", "*");
+    
     db.collection("events").get()
         .then(querySnapshot => { 
             let eventArray = [];
