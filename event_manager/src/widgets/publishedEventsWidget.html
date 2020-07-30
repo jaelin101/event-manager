@@ -1,14 +1,26 @@
 <script>
+    // This script will 
+
+    // Replace "eventList" to the ID of the element where you would like 
+    // the list of events to appear
+    var outputElementId = "eventList"; 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
    
         if (this.readyState == 4 && this.status == 200) {
             // Call was successful. Now generate list HTML
-            document.getElementById("eventList").innerHTML = this.responseText;
+            let eventObjects = JSON.parse(this.responseText);
+            let list = '<ul>';
+            for (var i = 0; i < eventObjects.length; i++) {
+                for (var property in eventObjects[i]) {
+                    list+= '<li>' + eventObjects[i][property] + '</li>';
+                }
+            }
+            list += '</ul>'
+            document.getElementById(outputElementId).innerHTML = list;
         }
     };
   xhttp.open("GET", "https://us-central1-event-manager-8e18d.cloudfunctions.net/api", true);
   xhttp.send();
 
 </script>
-<div id="eventList"></div>
