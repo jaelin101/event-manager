@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 25px;
 }
 
 .App-logo {
@@ -31,3 +32,138 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-family: Arial;
+}
+
+/* CORE CSS */
+
+body {
+color:#777777;
+font-size:1.4em;
+line-height:1.5em;
+overflow-x:hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-family:'Montserrat';
+font-weight:700;
+}
+
+h2 {
+color:#000000;
+letter-spacing:-1px;
+margin-bottom:0;
+}
+
+h3 {
+color:#000000;
+letter-spacing:-1px;
+line-height:20px;
+}
+
+section {
+padding:45px 0;
+}
+
+.lead {
+font-family:'encode_sans_narrowregular';
+font-size:15px;
+}
+
+
+.uppercase {
+text-transform:uppercase;
+}
+
+
+/* NAVIGATION */
+
+header {
+width:100%;
+z-index:1041;
+}
+
+.navbar {
+-webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+      -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+      transition: background .5s ease-in-out,padding .5s ease-in-out;
+}
+
+.navbar-custom {
+color:#ffffff;
+font-family:'encode_sans_narrowmedium';
+font-size:14px;
+border-radius:0;
+margin-bottom:0;
+padding:20px 0;
+width:100%;
+z-index:9998;
+}
+
+.navbar-custom .nav {
+margin:15px 0;
+}
+
+.navbar-custom a {
+color:#777777;
+height:20px;
+}
+
+.navbar-brand {
+padding:0 15px;
+}
+
+.navbar-custom .navbar-nav > li > a:hover {
+color:#000000;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+background:#000000;
+}
+
+.banner--clone {
+background:#fac42b;
+}
+
+.banner--clone .navbar-custom a {
+color:#eeeeee;
+}
+
+.banner--clone .navbar-custom .navbar-nav > li > a:hover {
+color:#000000;
+}
+
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width:40%;
+}
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;   
+  z-index: 2;
+}
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
