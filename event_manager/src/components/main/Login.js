@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 // Configure Firebase.
 const config = {
-    apiKey: 'AIzaSyCXyPoEyKPnu9XKITCcFC6gv6PFoQ1roRc',
+    apiKey: '<API KEY>',
     authDomain: 'event-manager-8e18d.firebaseapp.com',
     projectId: 'event-manager-8e18d',
 };
